@@ -14,15 +14,19 @@ logger = logging.getLogger("onadaily")
 async def make_browser(playwright: Playwright, headless: bool = False) -> BrowserContext:
     datadir = os.path.abspath("./userdata")
 
-    user_agent = playwright.devices["Desktop Chrome"]["user_agent"]
+    # user_agent = playwright.devices["Desktop Chrome"]["user_agent"]
 
     browser = await playwright.chromium.launch_persistent_context(
         user_data_dir=datadir,
         headless=headless,
         channel="chrome",
         no_viewport=True,
-        user_agent=user_agent,
-        args=["--window-size=1280,720"],
+        # user_agent=user_agent,
+        args=[
+            "--window-size=1280,720",
+            "--disable-blink-features=AutomationControlled", # 이 부분 반드시 추가
+            "--disable-infobars",
+            ],
     )
     return browser
 
