@@ -50,7 +50,7 @@ URLS = {
 STAMP_URLS = {
     "onami": "https://oname.kr/attend/stamp2.html",
     "showdang": "https://showdang.co.kr/event/attend_stamp.php",
-    "banana": "https://www.bananamall.co.kr/etc/attendance.php",
+    "banana": "https://www.bananamall.co.kr/etc/attendance.php?cl=attendance",
     "dingdong": "https://dingdong.co.kr/attend/stamp.html",
     "domae": "https://domaedoll.com/attend/stamp.html",
 }
